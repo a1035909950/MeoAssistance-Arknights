@@ -9,7 +9,7 @@ namespace asst {
     public:
         InfrastAbstractTask(AsstCallback callback, void* callback_arg);
         virtual ~InfrastAbstractTask() = default;
-        virtual bool run() = 0;
+        virtual bool run() override = 0;
         virtual void on_run_fails(int retry_times) override {
             append_task_to_back_to_infrast_home();
         }
